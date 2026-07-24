@@ -1,6 +1,6 @@
-# mktile
+# maketile
 
-`mktile` is a small utility that splits an image into a tilemap of a desired size and deduplicates individual tiles.
+`maketile` is a small utility that splits an image into a tilemap of a desired size and deduplicates individual tiles.
 
 Note: As of right now, tiles are arranged arbitrarily and this may change.
 
@@ -16,7 +16,7 @@ It has only been tested on Fedora Linux.
 
 ### Build
 
-Run `make` in the root folder, which will generate a `mkfile` binary.
+Run `make` in the root folder, which will generate a `maketile` binary.
 
 ## Use
 
@@ -27,7 +27,7 @@ BMP, GIF, JPG, PNG, PSD, TGA, PIC, QOI, HDR, TIFF, WEBP.
 ### Sample execution
 
 ```
-$ mktile input.png 16 16 output.png
+$ maketile input.png 16 16 output.png
 INFO: FILEIO: [assets/input.png] File loaded successfully
 INFO: IMAGE: Data loaded successfully (384x320 | R8G8B8A8 | 1 mipmaps)
 INFO: FILEIO: [assets/output.png] File saved successfully

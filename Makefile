@@ -1,8 +1,9 @@
 CXX      := g++
 CXXFLAGS := -std=c++17 -Wall -Wextra
 LDFLAGS  := -lraylib -lm -ldl -lpthread
+PREFIX   ?= /usr/local
 
-TARGET   := mktile
+TARGET   := maketile
 SRCDIR   := src
 BUILDDIR := build
 SOURCES  := $(wildcard $(SRCDIR)/*.cpp)
@@ -22,4 +23,11 @@ $(BUILDDIR):
 clean:
 	rm -rf $(BUILDDIR) $(TARGET)
 
-.PHONY: all clean
+install: $(TARGET)
+	install -d $(DESTDIR)$(PREFIX)/bin
+	install -m 755 $(TARGET) $(DESTDIR)$(PREFIX)/bin/$(TARGET)
+
+uninstall:
+	rm -f $(DESTDIR)$(PREFIX)/bin/$(TARGET)
+
+.PHONY: all clean install uninstall
